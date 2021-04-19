@@ -37,6 +37,9 @@ Route::delete('deletepersona/{id}','App\Http\Controllers\PersonasController@dele
 // obtener top 3
 Route::get('personastop','App\Http\Controllers\PersonasController@topPersonas');
 
+// obtener personas de un planeta
+Route::get('personasplaneta/{id}', 'App\Http\Controllers\PersonasController@getUsuariosByPlaneta');
+
 // ---- planetas api
 
 // obtener todos los planetas

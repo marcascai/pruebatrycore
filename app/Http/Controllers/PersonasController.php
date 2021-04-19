@@ -68,6 +68,17 @@ class PersonasController extends Controller
         ->where('id', $id)
         ->update(['visitas' => DB::raw('visitas+1')]);
     }
-  
+
+    public function getUsuariosByPlaneta($id){
+        // $persona = Personas::find($id);
+        // if (is_null($persona)) {
+        //     return response()->json(['message' =>'Persona no existe'], 404);
+        // }
+        $personas = DB::table('personas')
+                    ->select('personas.*')
+                    ->where('planeta', $id)
+                    ->get();
+        return response()->json($personas, 200);
+    }
 
 }
